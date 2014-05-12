@@ -7,11 +7,74 @@
  *
  */
 
+import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.Timer;
+import javax.swing.JFrame;
+import java.awt.Canvas;
+import java.awt.event.KeyEvent;
 
-
-public class boxjumper
+public class boxjumper extends Canvas
 {
-    public boxjumper()
+	private Timer timer;
+	private final static int SLEEP = 50;
+	private int level;
+	private int score;
+	private int x;
+	private int y;
+	private int moveDir; //Movement direction
+	
+    public boxjumper(KeyEvent event)
     {
+    	      //work in progress
+    	/*
+    	//initialize variables
+    	level = 1;
+    	score = 0;
+    	x = 0;
+		y = 0;
+    	
+    	//window size
+    	setSize(800,600);
+		setVisible(true);
+		
+		//background color
+		Color skyblue = new Color(0,191,255);
+		setBackground(skyblue);
+		
+		//Timer
+		ActionListener moveCaller = new ActionListener(){
+			public void actionPerformed(ActionEvent event)
+			{
+				movementKeys();  //each time timer fires it will call movementKeys
+			}
+		};
+		
+		timer = new Timer(SLEEP, moveCaller);
+		timer.start();
+		*/
+    }
+    
+    //Keys for movement
+    public void movementKeys()
+    {
+    	if (event.getKeyCode() == KeyEvent.VK_UP)
+    	{
+    		jump(); //jump
+    	}
+    	if (event.getKeyCode() == KeyEvent.VK_LEFT)
+    	{
+    		moveDir = 1; //move left
+    	}
+    	if (event.getKeyCode() == KeyEvent.VK_RIGHT)
+    	{
+    		moveDir = 2; //move right
+    	}
+    }
+    public void jump()
+    {
+    	//insert code
     }
 }
