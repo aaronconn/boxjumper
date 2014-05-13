@@ -11,5 +11,6 @@ its a box &amp; it jumps
     Functional changes: (What new functionality did you add?)
     -(answer)
     [If you have any other things to add, put them here]
+4. Go to the wiki https://www.github.com/aaronconn/boxjumper/wiki for information on what everything does
 
 Add anything you see fit.
