@@ -35,30 +35,31 @@ public class boxjumper extends Canvas
     	level = 1;
     	score = 0;
     	x = 0;
-		y = 0;
+	y = 0;
     	
     	//window size
     	setSize(800,600);
-		setVisible(true);
+	setVisible(true);
+	
+	//background color
+	Color skyblue = new Color(0,191,255);
+	setBackground(skyblue);
 		
-		//background color
-		Color skyblue = new Color(0,191,255);
-		setBackground(skyblue);
-		
-		//Timer
-		ActionListener moveCaller = new ActionListener(){
-			public void actionPerformed(ActionEvent event)
-			{
+	//Timer
+	ActionListener moveCaller = new ActionListener()
+	{
+		public void actionPerformed(ActionEvent event)
+		{
 				movementKeys();  //each time timer fires it will call movementKeys
-			}
-		};
-		
-		timer = new Timer(SLEEP, moveCaller);
-		timer.start();
-		*/
+		}
+	};
+	
+	timer = new Timer(SLEEP, moveCaller);
+	timer.start();
+	*/
     }
     
-    //Keys for movement
+    //Movement
     public void movementKeys()
     {
     	if (event.getKeyCode() == KeyEvent.VK_UP)
