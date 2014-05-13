@@ -24,8 +24,9 @@ public class boxjumper extends Canvas
 	private speed;      //Movement speed (units moved each interval)
 	private int level;                   //Level
 	private int score;                   //Player score
-	private int x;                       //x position
-	private int y;                       //y position
+	private double x;                       //x position
+	private double y;                       //y position
+	private double yVelocity;               //y velocity
 	
     public boxjumper(KeyEvent event)
     {
@@ -77,6 +78,19 @@ public class boxjumper extends Canvas
     }
     public void jump()
     {
-    	//insert code
+    	if(touchingPlatformTop)
+    	{
+    	    yVelocity = 9.9
+            while(!touchingPlatformTop)
+            {
+            	yVelocity -= 0.5
+            	y += yVelocity
+            }
+    	}
+    }
+    public boolean touchingPlatformTop
+    {
+    	Rectangle c = [playerobject].getBounds;
+    	if(c.intersects([top of platform])
     }
 }
