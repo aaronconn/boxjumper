@@ -1,4 +1,3 @@
-```java
 /**
  * boxjumper.java  12/5/2014
  *
@@ -80,4 +79,3 @@ public class boxjumper extends Canvas
     	//insert code
     }
 }
-```
