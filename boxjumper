@@ -94,10 +94,10 @@ public class boxjumper extends Canvas
     
     public void jump()
     {
-    	if(touchingPlatformTop)
+    	if(touchingPlatTop)
     	{
     	    yVelocity = 9.9;
-            while(!touchingPlatformTop)
+            while(!touchingPlatTop)
             {
             	yVelocity -= 0.5;
             	y += yVelocity;
@@ -109,8 +109,8 @@ public class boxjumper extends Canvas
     {
     	Rectangle c = new Rectangle(x,y,50,50);
     	if(c.intersects([top of any platform])
-    		return true;
+    		touchingPlatTop = true;
     	else
-    		return false;
+    		touchingPlatTop = false;
     }
 }
