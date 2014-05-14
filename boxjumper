@@ -21,7 +21,7 @@ public class boxjumper extends Canvas
 {
 	private Timer timer; 
 	private final static int SLEEP = 50; //Delay in registering keypresses
-	private double speed;      //Movement speed (units moved each interval)
+	private double speed = 10;      //Movement speed (units moved each interval)
 	private int level;                   //Level
 	private int score;                   //Player score
 	private double x;                       //x position
@@ -63,7 +63,10 @@ public class boxjumper extends Canvas
     //Player
     public void player()
     {
-    		
+    	window.setColor(Color.red)
+    	window.fillRect(x,y,50,50)
+  	
+  	
     }
     
     //Movement
