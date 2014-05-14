@@ -31,15 +31,15 @@ public class boxjumper extends Canvas
     public boxjumper(KeyEvent event)
     {
     	      //work in progress
-    	/*
-    	//initialize variables
-    	level = 1;
-    	score = 0;
-    	x = 0;
+    	
+    //initialize variables
+    level = 1;
+    score = 0;
+    x = 0;
 	y = 0;
     	
-    	//window size
-    	setSize(800,600);
+    //window size
+    setSize(800,600);
 	setVisible(true);
 	
 	//background color
@@ -58,6 +58,12 @@ public class boxjumper extends Canvas
 	timer = new Timer(SLEEP, moveCaller);
 	timer.start();
 	*/
+    }
+    
+    //Player
+    public void player()
+    {
+    		
     }
     
     //Movement
@@ -88,9 +94,12 @@ public class boxjumper extends Canvas
             }
     	}
     }
-    public boolean touchingPlatformTop
+    public boolean touchingPlatformTop()
     {
     	Rectangle c = [playerobject].getBounds;
     	if(c.intersects([top of platform])
+    	{
+    		
+    	}
     }
 }
