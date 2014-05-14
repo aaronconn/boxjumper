@@ -21,7 +21,7 @@ public class boxjumper extends Canvas
 {
 	private Timer timer; 
 	private final static int SLEEP = 50; //Delay in registering keypresses
-	private speed;      //Movement speed (units moved each interval)
+	private double speed;      //Movement speed (units moved each interval)
 	private int level;                   //Level
 	private int score;                   //Player score
 	private double x;                       //x position
@@ -80,11 +80,11 @@ public class boxjumper extends Canvas
     {
     	if(touchingPlatformTop)
     	{
-    	    yVelocity = 9.9
+    	    yVelocity = 9.9;
             while(!touchingPlatformTop)
             {
-            	yVelocity -= 0.5
-            	y += yVelocity
+            	yVelocity -= 0.5;
+            	y += yVelocity;
             }
     	}
     }
