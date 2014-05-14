@@ -10,12 +10,13 @@
 
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Canvas;
+import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.Timer;
 import javax.swing.JFrame;
-import java.awt.Canvas;
-import java.awt.event.KeyEvent;
 
 public class boxjumper extends Canvas
 {
@@ -64,10 +65,9 @@ public class boxjumper extends Canvas
     //Player
     public void player()
     {
-    	window.setColor(Color.red)
-    	window.fillRect(x,y,50,50)
+    	window.setColor(Color.RED);
+    	window.fillRect(x,y,50,50);
     }
-    
     
     //Movement
     public void movementKeys()
@@ -103,12 +103,13 @@ public class boxjumper extends Canvas
             }
     	}
     }
+    
     public boolean touchingPlatformTop()
     {
-    	Rectangle c = [playerobject].getBounds;
-    	if(c.intersects([top of platform])
-    	{
-    		
-    	}
+    	Rectangle c = new Rectangle(x,y,50,50);
+    	if(c.intersects([top of any platform])
+    		return true;
+    	else
+    		return false;
     }
 }
