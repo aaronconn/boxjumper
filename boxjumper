@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Canvas;
 import java.awt.Rectangle;
+import java.awt.AWTEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -22,16 +23,18 @@ public class boxjumper extends Canvas
 {
 	private Timer timer; 
 	private final static int SLEEP = 50;    //Delay in registering keypresses
-	private int speed;                   //Movement speed (units moved each interval)
+	private int speed = 8;                  //Movement speed (units moved each interval)
+	private int jumpHeight = 17;            //Jump height
+	private int gravity = 2;                //Gravity
 	private int level;                      //Level
 	private int score;                      //Player score
-	private int x;                       //x position
-	private int y;                       //y position
-	private int yVelocity;               //y velocity
+	private int x;                          //x position
+	private int y;                          //y position
+	private int yVelocity;                  //y velocity
 	private boolean touchingPlatTop;        //If player is touching the top of the platform
 
 	
-    public boxjumper(KeyEvent event)
+    public boxjumper()
     {
     	      //work in progress
     	
@@ -55,7 +58,7 @@ public class boxjumper extends Canvas
 			public void actionPerformed(ActionEvent event)
 			{
 					movementKeys();  //each time timer fires it will call movementKeys
-					redraw();        //redraw the player
+					redraw(window);  //redraw the player
 			}
 		};
 		timer = new Timer(SLEEP, moveCaller);
@@ -64,7 +67,7 @@ public class boxjumper extends Canvas
     }
     
     //Player
-    public void player()
+    public void player(Graphics window)
     {
     	window.setColor(Color.RED);
     	window.fillRect(x,y,50,50);
@@ -87,19 +90,19 @@ public class boxjumper extends Canvas
     	}
     }
     
-    public void redraw()
+    public void redraw(Graphics window)
     {
-    	player();
+    	player(window);
     }
     
     public void jump()
     {
     	if(touchingPlatTop)
     	{
-    	    yVelocity = 9.9;
+    	    yVelocity = jumpHeight;
             while(!touchingPlatTop)
             {
-            	yVelocity -= 0.5;
+            	yVelocity -= gravity;
             	y += yVelocity;
             }
     	}
