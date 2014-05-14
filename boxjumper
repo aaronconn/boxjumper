@@ -40,7 +40,7 @@ public class boxjumper extends Canvas
 	y = 0;
     	
     //window size
-    setSize(800,600);
+    setSize(1000,650);
 	setVisible(true);
 	
 	//background color
