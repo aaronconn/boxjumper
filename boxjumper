@@ -20,13 +20,14 @@ import java.awt.event.KeyEvent;
 public class boxjumper extends Canvas
 {
 	private Timer timer; 
-	private final static int SLEEP = 50; //Delay in registering keypresses
-	private double speed = 10;      //Movement speed (units moved each interval)
-	private int level;                   //Level
-	private int score;                   //Player score
+	private final static int SLEEP = 50;    //Delay in registering keypresses
+	private double speed;                   //Movement speed (units moved each interval)
+	private int level;                      //Level
+	private int score;                      //Player score
 	private double x;                       //x position
 	private double y;                       //y position
 	private double yVelocity;               //y velocity
+	private boolean touchingPlatTop;        //If player is touching the top of the platform
 	
     public boxjumper(KeyEvent event)
     {
@@ -52,6 +53,7 @@ public class boxjumper extends Canvas
 		public void actionPerformed(ActionEvent event)
 		{
 				movementKeys();  //each time timer fires it will call movementKeys
+				redraw();        //redraw the player
 		}
 	};
 	
@@ -65,8 +67,6 @@ public class boxjumper extends Canvas
     {
     	window.setColor(Color.red)
     	window.fillRect(x,y,50,50)
-  	
-  	
     }
     
     //Movement
@@ -85,6 +85,12 @@ public class boxjumper extends Canvas
     		x += speed; //move right
     	}
     }
+    
+    public void redraw()
+    {
+    	player();
+    }
+    
     public void jump()
     {
     	if(touchingPlatformTop)
