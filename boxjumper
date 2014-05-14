@@ -33,33 +33,32 @@ public class boxjumper extends Canvas
     {
     	      //work in progress
     	
-    //initialize variables
-    level = 1;
-    score = 0;
-    x = 0;
-	y = 0;
-    	
-    //window size
-    setSize(1000,650);
-	setVisible(true);
-	
-	//background color
-	Color skyblue = new Color(0,191,255);
-	setBackground(skyblue);
+    	//initialize variables
+    	level = 1;
+    	score = 0;
+    	x = 0;
+		y = 0;
+	    	
+	    //window size
+	    setSize(1000,650);
+		setVisible(true);
 		
-	//Timer
-	ActionListener moveCaller = new ActionListener()
-	{
-		public void actionPerformed(ActionEvent event)
+		//background color
+		Color skyblue = new Color(0,191,255);
+		setBackground(skyblue);
+			
+		//Timer
+		ActionListener moveCaller = new ActionListener()
 		{
-				movementKeys();  //each time timer fires it will call movementKeys
-				redraw();        //redraw the player
-		}
-	};
+			public void actionPerformed(ActionEvent event)
+			{
+					movementKeys();  //each time timer fires it will call movementKeys
+					redraw();        //redraw the player
+			}
+		};
+		timer = new Timer(SLEEP, moveCaller);
+		timer.start();
 	
-	timer = new Timer(SLEEP, moveCaller);
-	timer.start();
-	*/
     }
     
     //Player
@@ -68,6 +67,7 @@ public class boxjumper extends Canvas
     	window.setColor(Color.red)
     	window.fillRect(x,y,50,50)
     }
+    
     
     //Movement
     public void movementKeys()
