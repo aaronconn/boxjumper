@@ -10,11 +10,18 @@
 
 
 
-public class boxjumperrunner
+public class boxjumperrunner extends JFrame
 {
     public boxjumperrunner()
     {
-    
+    	super("Box Jumper Runner");
+						
+		getContentPane().add(new boxjumper());			
+		setVisible(true);
     }
     
+    public static void main( String args[] )
+	{
+		boxjumper run = new boxjumper();
+	}
 }
