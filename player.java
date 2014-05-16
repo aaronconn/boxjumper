@@ -28,9 +28,30 @@ public abstract class player
     private boolean visible;   //if visible
     private Image image;       //player image
 	
+	
+	//player
     public player()
     {
-    	ImageIcon ii = new ImageIcon()
+    	ImageIcon ii = new ImageIcon(this.getClass().getResource(playerimage));
+    	image = ii.getImage();
+    	x = 0;
+    	y = 0;
+    }
+    
+    public moving()
+    {
+    	x += dx;
+    	y += dx;
+    }
+    
+    public getX()
+    {
+    	return x;
+    }
+    
+    public getY()
+    {
+    	return y;
     }
     
     //Player
