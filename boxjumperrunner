@@ -8,6 +8,8 @@
  *
  */
 
+package boxjumper;
+
 import javax.swing.JFrame;
 
 public class boxjumperrunner extends JFrame
