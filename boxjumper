@@ -8,18 +8,19 @@
  *
  */
 
+package boxjumper;
+
+
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Canvas;
 import java.awt.Rectangle;
 import java.awt.AWTEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import javax.swing.Timer;
 import javax.swing.JFrame;
 
-public class boxjumper extends Canvas
+public abstract class boxjumper extends Canvas implements KeyListener
 {
 	private Timer timer; 
 	private final static int SLEEP = 50;    //Delay in registering keypresses
@@ -31,6 +32,7 @@ public class boxjumper extends Canvas
 	private int x;                          //x position
 	private int y;                          //y position
 	private int yVelocity;                  //y velocity
+	private int key;                        //Key being pressed
 	private boolean touchingPlatTop;        //If player is touching the top of the platform
 	private boolean firstPaint;             //Used to decide if the player's x and y should be reset when redrawing level
 	
@@ -53,8 +55,8 @@ public class boxjumper extends Canvas
 		//background color
 		Color skyblue = new Color(0,191,255);
 		setBackground(skyblue);
-			
-		//Timer
+		
+		//timer
 		ActionListener moveCaller = new ActionListener()
 		{
 			public void actionPerformed(ActionEvent event, Graphics window)
@@ -71,7 +73,6 @@ public class boxjumper extends Canvas
 		};
 		timer = new Timer(SLEEP, moveCaller);
 		timer.start();
-	
     }
     
     //Player
