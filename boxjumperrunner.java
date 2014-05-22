@@ -16,14 +16,18 @@ public class boxjumperrunner extends JFrame
 {
     public boxjumperrunner()
     {
-    	super("Box Jumper Runner");
+    	add(new Level());
 						
-		getContentPane().add(new boxjumper());			
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(1000,650);
+		setLocationRelativeTo(null);
+		setTitle("Boxjumper");
+		setResizable(false);
 		setVisible(true);
     }
     
-    public static void main( String args[] )
+    public static void main(String[] args)
 	{
-		boxjumper run = new boxjumper();
+		new boxjumperrunner();
 	}
 }
