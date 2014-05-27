@@ -26,6 +26,7 @@ public class Level extends JPanel implements ActionListener
 {
 	private Timer timer;
 	private Player player; 
+	private int levelNumber;
 	
     public Level()
     {
@@ -35,6 +36,7 @@ public class Level extends JPanel implements ActionListener
     	setDoubleBuffered(true);
     	
     	player = new Player();
+    	levelNumber = 1;
     	
     	timer = new Timer(5,this);
     	timer.start();
@@ -46,6 +48,11 @@ public class Level extends JPanel implements ActionListener
 
         Graphics2D g2d = (Graphics2D)window;
         g2d.drawImage(player.getImage(), player.getX(), player.getY(), this);
+        //Draw starting platform
+    	window.setColor(new Color(155,118,83));             //lower platform color
+    	window.fillRect(0,451,125,200);             //draw lower platform
+    	window.setColor(new Color(154,205,50));             //upper platform color
+    	window.fillRect(0,450,125,10);             //draw upper platform
 
         Toolkit.getDefaultToolkit().sync();
         window.dispose();
@@ -53,13 +60,16 @@ public class Level extends JPanel implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
+    	/*if((player.getY == 1) && player.getBounds.intersects())
+    	{
+    		
+    	}*/
         player.move();
-        repaint();  
+        repaint(); 
     }
     
     private class TAdapter extends KeyAdapter
     {
-
         public void keyReleased(KeyEvent e)
         {
             player.keyReleased(e);
