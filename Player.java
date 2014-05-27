@@ -12,16 +12,17 @@ package boxjumper;
 
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 public class Player
 {
-	private String playerimage = "playerimage.gif";   //player image name
+	private String playerimage = "playerimage.png";   //player image name
 	
 	private int dx;            //x direction
-    private int dy;            //if jumping
+    private boolean ifJumping; //if jumping
     private int x;             //x position
     private int y;             //y position
     private int width;         //image width
@@ -33,14 +34,15 @@ public class Player
 	//player
     public Player()
     {
-    	image = (this.getClass().getResource(playerimage)).getImage;
-    	x = 0;
-    	y = 0;
+    	image = new ImageIcon(playerimage).getImage();
+    	x = 25;
+    	y = 400;
     }
     
     public void move()
     {
     	x += dx;
+		
     }
     
     public int getX()
@@ -57,6 +59,11 @@ public class Player
 	{
         return image;
     }
+    
+    public Rectangle getBounds()
+    {
+        return new Rectangle(x, y, width, height);
+    }
 	
 	public void keyPressed(KeyEvent e)
 	{
@@ -65,17 +72,17 @@ public class Player
 		//Left arrow
 		if (key == KeyEvent.VK_LEFT)
 		{
-            dx = -8;
+            dx = -2;
         }
 		//Right arrow
         if (key == KeyEvent.VK_RIGHT)
         {
-            dx = 8;
+            dx = 2;
         }
 		//Up arrow
         if (key == KeyEvent.VK_UP)
         {
-            dy = 1;
+            ifJumping = true;
         }
 	}
 	
@@ -96,7 +103,7 @@ public class Player
 		//Up arrow
         if (key == KeyEvent.VK_UP)
         {
-            dy = 0;
+            ifJumping = false;
         }
 	}
 }
