@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 
 public class Player
 {
-	private String playerimage = "playerimage.png";   //player image name
+	private String playerimage = "resource/playerimage.png";   //player image name
 	
 	private int dx;            //x direction
     private boolean ifJumping; //if jumping
@@ -46,15 +46,6 @@ public class Player
     {
     	x += dx;
 		
-    }
-    
-    public updateLevelImage(int newLevel)
-    {
-    	level = newLevel;
-    	if(level == 1)
-    	{
-    		
-    	}
     }
     
     public int getX()
