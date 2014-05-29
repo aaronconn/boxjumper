@@ -27,14 +27,17 @@ public class Player
     private int y;             //y position
     private int width;         //image width
     private int height;        //image height
+    private int level;
     private boolean visible;   //if visible
     private Image image;       //player image
+    private Image levelImage;  //level image
 	
 	
 	//player
     public Player()
     {
     	image = new ImageIcon(playerimage).getImage();
+    	level = 1;
     	x = 25;
     	y = 400;
     }
@@ -45,6 +48,15 @@ public class Player
 		
     }
     
+    public updateLevelImage(int newLevel)
+    {
+    	level = newLevel;
+    	if(level == 1)
+    	{
+    		
+    	}
+    }
+    
     public int getX()
     {
     	return x;
@@ -53,6 +65,11 @@ public class Player
     public int getY()
     {
     	return y;
+    }
+    
+    public Image getLevelImage()
+    {
+    	return levelImage;
     }
     
 	public Image getImage()
