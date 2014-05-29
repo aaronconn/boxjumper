@@ -53,14 +53,9 @@ public class Player
     	return x;
     }
     
-    public int getY()
+    public int getJumping()
     {
-    	return y;
-    }
-    
-    public Image getLevelImage()
-    {
-    	return levelImage;
+    	return ifJumping;
     }
     
 	public Image getImage()
