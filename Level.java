@@ -28,6 +28,7 @@ public class Level extends JPanel implements ActionListener
 	private Timer timer;
 	private Player player; 
 	private int levelNumber;
+	private boolean jumping;
 	
     public Level()
     {
@@ -56,7 +57,8 @@ public class Level extends JPanel implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-    	if((player.getY == 1) && player.getBounds.intersects(new Rectangle(0,451,125,200)))
+    	
+    	if((player.getJumping) && player.getBounds.intersects(new Rectangle(0,450,125,200)))
     	{
     		
     	}
